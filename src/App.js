@@ -1,19 +1,26 @@
 import "./App.css";
-import { Switch, Route, BrowserRouter as Router, withRouter } from "react-router-dom";
-import { Home } from "./pages/home/index";
-import { ConfigPage } from "./pages/configPage/index";
-import { ResultPage } from "./pages/resultPage/index";
-import { NavBar } from "./components/navBar/index";
+import {
+  Route,
+  BrowserRouter as Router,
+} from "react-router-dom";
+import Home from "./pages/home/index.jsx";
+import { ConfigPage } from "./pages/configPage/index.jsx";
+import { ResultPage } from "./pages/resultPage/index.jsx";
+import history from "./core/history";
 
 function App() {
   return (
-        <div>
-        <Router>
-        <Route route="/" exact component={ Home } />
-        <Route route="/config" component={ ConfigPage } />
-        <Route route="/result" component={ ResultPage } />
-        </Router>
-        </div>
+    <Router history={history}>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/config" exact>
+          <ConfigPage />
+        </Route>
+        <Route path="/result" exact>
+          <ResultPage />
+        </Route>
+    </Router>
   );
 }
 
