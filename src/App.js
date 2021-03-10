@@ -7,6 +7,7 @@ import Home from "./pages/home/index.jsx";
 import { ConfigPage } from "./pages/configPage/index.jsx";
 import { ResultPage } from "./pages/resultPage/index.jsx";
 import history from "./core/history";
+import 'semantic-ui-css/semantic.min.css'
 
 function App() {
   return (

@@ -1,17 +1,38 @@
 .container {
-  background-color: beige;
+  /* background-color: beige; */
   height: 100vh;
   width: 100vw;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-image: url('background.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.flex {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.header {
-  height: 40px;
-  background-color: brown;
-  text-align: center;
+.box-container {
+  position: relative;
+  width: 600px;
+  height: 420px;
+  background-color: rgb(250, 250, 250,0.3);
+  filter: blur(0.5px);
+  border-radius: 15px;
 }
 
-.body {
+.display-pic {
+  width: 50%;
+  height: 100%;
+  background-color: transparent;
+  /* turquoise */
+}
+
+.form-wrap {
   flex: 1;
+  height: 100%;
 }

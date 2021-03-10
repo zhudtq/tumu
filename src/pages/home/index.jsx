@@ -1,6 +1,7 @@
 import "./index.css";
 import React from 'react';
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
+import LoginForm from './components/form';
 
 class HomeClass extends React.Component {
   constructor(props) {
@@ -8,19 +9,23 @@ class HomeClass extends React.Component {
     this.state = {date: new Date()};
   }
 
-  clickMe = ()=>{
+  gotoConfig = () => {
     this.props.history.push('/config')
-    console.log('nicky props', this)
+  }
+
+  onTapLogin = ()=>{
+    console.log('nicky 父组件跳转啦');
+    this.gotoConfig()
   }
 
   render() {
     return (
-      <div className="container">
-        <div className="header">首页</div>
-        <div className="body">
-          <button onClick={this.clickMe}>点击我哦</button>
-          <div className="link">
-            链接
+      <div className="container flex">
+        <div className="box-container flex">
+          <div className="display-pic">
+          </div>
+          <div className="form-wrap flex">
+            <LoginForm onTapLogin={this.onTapLogin} />
           </div>
         </div>
       </div>
