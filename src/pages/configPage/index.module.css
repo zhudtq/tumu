@@ -1,0 +1,21 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-image: url('../bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.zz {
+  font-size: 100px;
+}
+
+.content {
+  width: 90vw;
+  height: 90vh;
+  background-color: rgba(81, 231, 194, 0.7);
+  border-radius: 25px;
+}

@@ -1,15 +1,11 @@
-import './index.css'
+import styles from "./index.module.css";
 
 export function ConfigPage() {
   return (
-    // <div className="container">
-    //   <div className="header">config page</div>
-    //   <div className="body">
-    //     <button onClick={clickMe}>wojfiowj</button>
-    //   </div>
-    // </div>
-    <div>
-      我试config
+    <div className={`${styles.container} flex`}>
+      <div className={`${styles.content} flex`}>
+
+      </div>
     </div>
   );
 }
@@ -17,5 +13,3 @@ export function ConfigPage() {
 function clickMe() {
     console.log('nicky home')
 }
-
-// export default Home

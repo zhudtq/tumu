@@ -14,16 +14,28 @@ class HomeClass extends React.Component {
     this.props.history.push('/config')
   }
 
-  checkUserInfo = new Promise(res => {
-    console.log('res')
-  }, rej => {
-    console.log('rej')
-  })
+  checkUserInfo = (userInfo) => {
+    return new Promise((res, rej) => {
+      const { userName='', password='' } = userInfo;
+      if (userName !== 'admain' || password !=='admain') {
+        rej();
+      }
+      res();
+    })
+  }
 
   onTapLogin = (userInfo)=>{
-    console.log('nicky check', this.checkUserInfo)
-    this.checkUserInfo(userInfo).then()
-    // this.gotoConfig()
+    console.log('nicky check', userInfo)
+    this.checkUserInfo(userInfo).then(
+      () => {
+        console.warn('登录成功')
+        this.gotoConfig()
+      }
+    ).catch(
+      () => {
+        console.warn('用户名错误')
+      }
+    )
   }
 
   render() {
