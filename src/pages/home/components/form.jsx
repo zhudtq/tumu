@@ -1,11 +1,24 @@
 import styles from "./index.module.css";
 import { Input, Button } from 'semantic-ui-react'
 
-function LoginForm(props) {
+function LoginForm(props, that) {
+  let userName;
+  let password;
     function onClickLogin (){
-        console.log('nicky')
         const { onTapLogin } = props;
-        onTapLogin();
+        let userInfo = {
+          userName,
+          password
+        }
+        onTapLogin(userInfo);
+    }
+
+    function onAccChange(e) {
+      userName = e && e.target?.value;
+    }
+
+    function onPassChange(e) {
+      password = e && e.target?.value;
     }
 
     return (
@@ -17,6 +30,7 @@ function LoginForm(props) {
             iconPosition='left' 
             placeholder='账号' 
             className={styles.account}
+            onChange={onAccChange}
           />
           <Input 
             icon='keyboard outline' 
@@ -24,6 +38,7 @@ function LoginForm(props) {
             placeholder='密码' 
             type='password'
             className={styles.password}
+            onChange={onPassChange}
           />
           <div className={styles.buttonWrap}>
             <Button color='teal' onClick={onClickLogin}>登录</Button>
