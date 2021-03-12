@@ -1,0 +1,28 @@
+.container {
+    padding: 12px;
+    border: 1px grey solid;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.lineWrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.formUnit {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 70px;
+    height: 26px;
+    margin: 0 6px;
+}
+
+.unit {
+    font-size: 5px;
+}

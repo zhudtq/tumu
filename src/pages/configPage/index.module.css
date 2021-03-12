@@ -32,15 +32,15 @@
 .configPic {
   width: 120px;
   height: 180px;
+  margin-left: 20px;
 }
 
 .configDetail {
-
+  flex: 1;
+  margin: 0 20px;
 }
 
 .form1 {
-  /* width: 300px; */
-  /* height: 100px; */
   margin-bottom: 30px;
 }
 

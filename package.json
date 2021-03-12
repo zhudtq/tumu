@@ -25,7 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:electron": "electron ."
+    "test:dec": "electron .",
+    "build:windows": "electron-packager . 'HelloWorld' --platform=win32 --arch=x64 --icon=icon.ico --out=./out --asar --app-version=0.0.1"
   },
   "main": "src/electron-starter.js",
   "eslintConfig": {

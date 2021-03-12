@@ -1,11 +1,13 @@
 import styles from "./index.module.css";
 import { Statistic, Button, Card, Image, Form, Input } from 'semantic-ui-react'
 import dataPic from '../dataPic.jpeg';
+import TopForm from './components/TopForm/topForm.jsx';
+import BotForm from './components/BottomForm/botForm.jsx';
 
-export function ConfigPage() {
+export function ConfigPage(props) {
   function onClickJump() {
     // this.props.history.push('/result')
-    alert('还没做')
+    // alert('还没做')
   }
 
   return (
@@ -17,27 +19,10 @@ export function ConfigPage() {
         </Statistic>
         </div>
         <div className={`${styles.configWrap} flex`}>
-          <div>
-            <img src={dataPic} className={styles.configPic} />
-          </div>
+          <img src={dataPic} className={styles.configPic} />
           <div className={styles.configDetail}>
-            <div className={styles.form1}>
-            <Form>
-              <Form.Group widths='equal'>
-                <Form.Field>
-                  <label>First name</label>
-                  <Input fluid placeholder='First name' />
-                </Form.Field>
-                <Form.Field>
-                  <label>Middle name</label>
-                  <Input fluid placeholder='Middle name' />
-                </Form.Field>
-              </Form.Group>
-            </Form>
-            </div>
-            <div className={styles.form2}>
-              表格2
-            </div>
+            <TopForm />
+            <BotForm />
           </div>
         </div>
         <div className={`${styles.dataWrap}`}>
@@ -58,9 +43,6 @@ export function ConfigPage() {
               <div className='ui two buttons'>
               <Button onClick={onClickJump} basic color='red' content='下一页' />
               <Button basic color='orange' content='各种按钮' />
-              <Button basic color='yellow' content='Yellow' />
-              <Button basic color='olive' content='Olive' />
-              <Button basic color='green' content='Green' />
               </div>
             </Card.Content>
           </Card>
