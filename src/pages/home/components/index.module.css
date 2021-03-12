@@ -10,7 +10,6 @@
     height: 80px;
     border-radius: 50px;
     background-color: white;
-    margin-bottom: 20px;
     background-image: url('avatar.jpeg');
     background-size: cover;
 }

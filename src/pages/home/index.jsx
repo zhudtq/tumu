@@ -2,7 +2,7 @@ import "./index.css";
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import LoginForm from './components/form';
-import dataPic from './dataPic.jpeg';
+import dataPic from '../dataPic.jpeg';
 
 class HomeClass extends React.Component {
   constructor(props) {
@@ -34,6 +34,7 @@ class HomeClass extends React.Component {
     ).catch(
       () => {
         console.warn('用户名错误')
+        alert('密码错误')
       }
     )
   }

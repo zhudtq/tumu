@@ -9,13 +9,52 @@
   background-size: cover;
 }
 
-.zz {
-  font-size: 100px;
-}
-
 .content {
   width: 90vw;
   height: 90vh;
-  background-color: rgba(81, 231, 194, 0.7);
+  background-color: rgba(221, 220, 220, 0.6);
   border-radius: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+} 
+
+.title {
+
+}
+
+.configWrap {
+  width: 100%;
+  justify-content: space-around;
+}
+
+.configPic {
+  width: 120px;
+  height: 180px;
+}
+
+.configDetail {
+
+}
+
+.form1 {
+  /* width: 300px; */
+  /* height: 100px; */
+  margin-bottom: 30px;
+}
+
+.form2 {
+  background-color: rgb(71, 249, 255);
+  width: 300px;
+  height: 100px;
+}
+
+.dataWrap {
+  width: 80%;
+  height: 200px;
+}
+
+.buttonWrap {
+  
 }

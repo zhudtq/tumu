@@ -1,5 +1,5 @@
 import styles from "./index.module.css";
-import { Input, Button } from 'semantic-ui-react'
+import { Input, Button, Statistic } from 'semantic-ui-react'
 
 function LoginForm(props, that) {
   let userName;
@@ -25,6 +25,9 @@ function LoginForm(props, that) {
       <div className={styles.container}>
           <div className={styles.avatarImg}>
           </div>
+          <Statistic color='grey'>
+            <Statistic.Label>新型微孔膜滤板选型设计</Statistic.Label>
+          </Statistic>
           <Input 
             icon='user outline' 
             iconPosition='left' 
