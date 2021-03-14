@@ -16,15 +16,18 @@ function createWindow() {
     mainWindow = new BrowserWindow({width: 800, height: 600, webPreferences: { nodeIntegration: true }});
 
     // and load the index.html of the app.
-    let startUrl = process.env.ELECTRON_START_URL || url.format({
-            pathname: path.join(__dirname, '/../build/index.html'),
+    let startUrl = url.format({
+            pathname: path.join(__dirname, './build/index.html'),
             protocol: 'file:',
             slashes: true
         });
-    // react local server
-    startUrl = 'http://localhost:3000/'
-    mainWindow.loadURL(startUrl);
-    // Open the DevTools.
+
+    const localServer = 'http://localhost:3000/'
+    const filePath = 'public/build/index.html'
+
+    // mainWindow.loadURL(startUrl);
+    // mainWindow.loadFile(filePath)
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
     mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.

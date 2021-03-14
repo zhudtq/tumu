@@ -2,9 +2,7 @@ import "./index.css";
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import LoginForm from './components/form';
-import ModalExampleBasic from './modal/index';
 import dataPic from '../dataPic.jpeg';
-import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 
 class HomeClass extends React.Component {
   constructor(props) {
@@ -66,7 +64,9 @@ class HomeClass extends React.Component {
             <div className='modal-text'>
               密码错误
             </div>
-            <Button onClick={this.closeModal} primary>确定</Button>
+            <button onClick={this.closeModal}>
+              确定
+            </button>
           </div>
         </div>
       </div>

@@ -6,9 +6,15 @@
     background-color: white;
 }
 
-.lineWrap {
+.lineWrap1 {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.lineWrap2 {
+    display: flex;
+    justify-content: space-around;
     margin-bottom: 5px;
 }
 
@@ -19,7 +25,7 @@
 
 .input {
     width: 70px;
-    height: 26px;
+    height: 20px;
     margin: 0 6px;
 }
 

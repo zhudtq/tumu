@@ -1,5 +1,4 @@
 import styles from "./index.module.css";
-import { Input, Button, Statistic } from 'semantic-ui-react'
 
 function LoginForm(props, that) {
   let userName;
@@ -25,27 +24,23 @@ function LoginForm(props, that) {
       <div className={styles.container}>
           <div className={styles.avatarImg}>
           </div>
-          <Statistic color='grey'>
-            <Statistic.Label>新型微孔膜滤板选型设计</Statistic.Label>
-          </Statistic>
-          <Input 
-            icon='user outline' 
-            iconPosition='left' 
+          <div className={styles.title}>
+            新型微孔膜滤板选型设计
+          </div>
+          <input 
             placeholder='账号' 
             className={styles.account}
             onChange={onAccChange}
           />
-          <Input 
-            icon='keyboard outline' 
-            iconPosition='left' 
+          <input 
             placeholder='密码' 
             type='password'
             className={styles.password}
             onChange={onPassChange}
           />
           <div className={styles.buttonWrap}>
-            <Button color='teal' onClick={onClickLogin}>登录</Button>
-            <Button color='grey'>注册</Button>
+            <button color='teal' onClick={onClickLogin}>登录</button>
+            <button color='grey'>注册</button>
           </div>
       </div>
     );

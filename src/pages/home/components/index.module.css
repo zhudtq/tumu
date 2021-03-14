@@ -28,3 +28,7 @@
     justify-content: space-between;
     width: 160px;
 }
+
+.title {
+    margin-bottom: 20px;
+}

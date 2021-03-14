@@ -1,5 +1,4 @@
 import styles from "./index.module.css";
-import { Input, Form, Button } from 'semantic-ui-react'
 
 function BotForm(props) {
   let userName;
@@ -12,24 +11,27 @@ function BotForm(props) {
     return (
       <div className={styles.container}>
         <div>初始参数设置</div>
-        <Form>
-          <div className={styles.lineWrap}>
+          <div className={styles.lineWrap1}>
                 <div className={styles.formUnit}>
                   <label>过滤风速</label>
-                  <Input className={styles.input} fluid placeholder='' />
+                  <input className={styles.input} fluid placeholder='' />
                   <text className={styles.unit}>m/min</text>
                 </div>
                 <div className={styles.formUnit}>
                   <label>流体动力粘度</label>
-                  <Input className={styles.input} fluid placeholder='' />
+                  <select >
+                        <option value="1200">1200</option>
+                        <option value="1400">1400</option>
+                        <option value="1600">1600</option>
+                        <option value="1800">1800</option>
+                  </select>
                   <text className={styles.unit}>Fa*s</text>
                 </div>
             </div>
-            <div className={styles.lineWrap}>
-              <Button positive>计算</Button>
-              <Button negative>重置</Button>
+            <div className={styles.lineWrap2}>
+              <button positive>计算</button>
+              <button negative>重置</button>
             </div>
-          </Form>
       </div>
     );
 }
