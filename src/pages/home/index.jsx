@@ -9,7 +9,7 @@ import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 class HomeClass extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {date: new Date()};
+    this.state = {showModal: 'hideModal'};
   }
 
   gotoConfig = () => {
@@ -36,8 +36,17 @@ class HomeClass extends React.Component {
     ).catch(
       () => {
         console.warn('用户名错误')
+        this.setState({
+          showModal: 'modal'
+        })
       }
     )
+  }
+
+  closeModal = () => {
+    this.setState({
+      showModal: 'hideModal'
+    })
   }
 
   render() {
@@ -52,9 +61,12 @@ class HomeClass extends React.Component {
           </div>
         </div>
 
-        <div className='modal flex'>
-          <div className='modal-content'>
-            按钮
+        <div className={`${this.state.showModal}`}>
+          <div className='modal-content flex'>
+            <div className='modal-text'>
+              密码错误
+            </div>
+            <Button onClick={this.closeModal} primary>确定</Button>
           </div>
         </div>
       </div>

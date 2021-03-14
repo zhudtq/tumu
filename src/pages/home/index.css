@@ -49,9 +49,24 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: brown;
+  background-color: rgb(5, 5, 5, .8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
+  height: 140px;
+  width: 180px;
+  border-radius: 20px;
+  flex-direction: column;
+  background-color: rgba(254, 255, 251, 0.6);
+}
 
+.modal-text {
+  margin-bottom: 20px;
+}
+
+.hideModal {
+  display: none;
 }
