@@ -2,7 +2,9 @@ import "./index.css";
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import LoginForm from './components/form';
+import ModalExampleBasic from './modal/index';
 import dataPic from '../dataPic.jpeg';
+import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 
 class HomeClass extends React.Component {
   constructor(props) {
@@ -34,7 +36,6 @@ class HomeClass extends React.Component {
     ).catch(
       () => {
         console.warn('用户名错误')
-        alert('密码错误')
       }
     )
   }
@@ -48,6 +49,12 @@ class HomeClass extends React.Component {
           </div>
           <div className="form-wrap flex">
             <LoginForm onTapLogin={this.onTapLogin} />
+          </div>
+        </div>
+
+        <div className='modal flex'>
+          <div className='modal-content'>
+            按钮
           </div>
         </div>
       </div>
