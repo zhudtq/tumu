@@ -9,20 +9,17 @@ import { ResultPage } from "./pages/resultPage/index.jsx";
 
 function App() {
   return (
-    // <Router>
-    //     <Route path="/" exact>
-    //       <Home />
-    //     </Route>
-    //     <Route path="/config" exact>
-    //       <ConfigPage />
-    //     </Route>
-    //     <Route path="/result" exact>
-    //       <ResultPage />
-    //     </Route>
-    // </Router>
-    <div>
-      nicky o o o 
-    </div>
+    <Router>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/config" exact>
+          <ConfigPage />
+        </Route>
+        <Route path="/result" exact>
+          <ResultPage />
+        </Route>
+    </Router>
 
   );
 }

@@ -25,13 +25,12 @@ function createWindow() {
     const localServer = 'http://localhost:3000/'
     const filePath = 'public/build/index.html'
 
-    // mainWindow.loadURL(startUrl);
-    // mainWindow.loadFile(filePath)
-    mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, './build/index.html'),
-        protocol: 'file:',
-        slashes: true
-       }));
+    mainWindow.loadURL('./build/index.html');
+    // mainWindow.loadURL(url.format({
+    //     pathname: path.join(__dirname, 'build/index.html'),
+    //     protocol: 'file:',
+    //     slashes: true
+    //    }));
     mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
