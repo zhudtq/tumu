@@ -27,7 +27,11 @@ function createWindow() {
 
     // mainWindow.loadURL(startUrl);
     // mainWindow.loadFile(filePath)
-    mainWindow.loadURL(`file://${__dirname}/index.html`);
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, './build/index.html'),
+        protocol: 'file:',
+        slashes: true
+       }));
     mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
