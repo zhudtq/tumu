@@ -13,7 +13,7 @@ let mainWindow;
 
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 800, height: 600, webPreferences: { nodeIntegration: true }});
+    mainWindow = new BrowserWindow({width: 1000, height: 700, webPreferences: { nodeIntegration: true }});
 
     // and load the index.html of the app.
     let startUrl = url.format({
@@ -22,12 +22,9 @@ function createWindow() {
             slashes: true
         });
 
-    const localServer = 'http://localhost:3000/'
-    const filePath = 'public/build/index.html'
-
-    mainWindow.loadURL('./build/index.html');
+    mainWindow.loadURL('http://localhost:3000/');
     // mainWindow.loadURL(url.format({
-    //     pathname: path.join(__dirname, 'build/index.html'),
+    //     pathname: __dirname + '/build/index.html',
     //     protocol: 'file:',
     //     slashes: true
     //    }));

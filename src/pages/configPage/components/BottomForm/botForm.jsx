@@ -8,6 +8,10 @@ function BotForm(props) {
       userName = e && e.target?.value;
     }
 
+    function onCalc() {
+      alert('还没做，界面也没有细调，先给你看下，可以了就开始正式做，很快就完事')
+    }
+
     return (
       <div className={styles.container}>
         <div>初始参数设置</div>
@@ -29,7 +33,7 @@ function BotForm(props) {
                 </div>
             </div>
             <div className={styles.lineWrap2}>
-              <button positive>计算</button>
+              <button onClick={onCalc} positive>计算</button>
               <button negative>重置</button>
             </div>
       </div>

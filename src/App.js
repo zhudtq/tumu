@@ -1,7 +1,7 @@
 import "./App.css";
 import {
   Route,
-  BrowserRouter as Router,
+  HashRouter as Router,
 } from "react-router-dom";
 import Home from "./pages/home/index.jsx";
 import { ConfigPage } from "./pages/configPage/index.jsx";

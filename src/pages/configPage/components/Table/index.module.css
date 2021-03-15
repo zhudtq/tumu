@@ -1,0 +1,11 @@
+.container {
+    background-color: white;
+}
+
+.line {
+    display: flex;
+}
+
+.item {
+    width: 90px;
+}

@@ -2,6 +2,7 @@ import styles from "./index.module.css";
 import dataPic from '../dataPic.jpeg';
 import TopForm from './components/TopForm/topForm.jsx';
 import BotForm from './components/BottomForm/botForm.jsx';
+import Table from './components/Table/index.jsx';
 
 export function ConfigPage(props) {
   function onClickJump() {
@@ -25,7 +26,7 @@ export function ConfigPage(props) {
           </div>
         </div>
         <div className={`${styles.dataWrap}`}>
-          
+          <Table></Table>
         </div>
         <div className={`${styles.buttonWrap}`}>
         </div>
@@ -37,3 +38,4 @@ export function ConfigPage(props) {
 function clickMe() {
     console.log('nicky home')
 }
+
