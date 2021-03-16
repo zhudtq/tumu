@@ -22,12 +22,12 @@ function createWindow() {
             slashes: true
         });
 
-    mainWindow.loadURL('http://localhost:3000/');
-    // mainWindow.loadURL(url.format({
-    //     pathname: __dirname + '/build/index.html',
-    //     protocol: 'file:',
-    //     slashes: true
-    //    }));
+    // mainWindow.loadURL('http://localhost:3000/');
+    mainWindow.loadURL(url.format({
+        pathname: __dirname + '/build/index.html',
+        protocol: 'file:',
+        slashes: true
+       }));
     mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
