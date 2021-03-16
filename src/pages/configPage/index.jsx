@@ -3,11 +3,19 @@ import dataPic from '../dataPic.jpeg';
 import TopForm from './components/TopForm/topForm.jsx';
 import BotForm from './components/BottomForm/botForm.jsx';
 import Table from './components/Table/index.jsx';
+import dataTableImport from '../data';
 
 export function ConfigPage(props) {
+  let dataTable = dataTableImport
   function onClickJump() {
     // this.props.history.push('/result')
     // alert('还没做')
+  }
+
+  function onCalcData(data) {
+    console.log('nicky 页面接收到了', data, dataTable)
+    const dataStack = dataTable[data];
+    console.log('nicky datastack', dataStack);
   }
 
   return (
@@ -22,7 +30,7 @@ export function ConfigPage(props) {
           <img src={dataPic} className={styles.configPic} />
           <div className={styles.configDetail}>
             <TopForm />
-            <BotForm />
+            <BotForm onCalcData={onCalcData} />
           </div>
         </div>
         <div className={`${styles.dataWrap}`}>
