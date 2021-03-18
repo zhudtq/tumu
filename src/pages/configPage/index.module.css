@@ -4,9 +4,8 @@
   position: relative;
   top: 0;
   left: 0;
-  background-image: url('../bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* color: aquamarine; */
+  background-image: linear-gradient(rgb(168, 243, 243,.3), aquamarine);
 }
 
 .content {
@@ -49,10 +48,27 @@
 
 .dataWrap {
   width: 80%;
-  min-height: 300px;
+  min-height: 200px;
   /* background-color: beige; */
 }
 
-.buttonWrap {
-  
+.tableWrap {
+  background-color: white;
+}
+
+.line {
+  display: flex;
+}
+
+.item {
+  width: 195px;
+  border: 1px black solid;
+}
+
+.confirmBtn{
+  margin-right: 150px;
+}
+
+.highLight:hover {
+  background-color: rgb(170, 236, 116);
 }

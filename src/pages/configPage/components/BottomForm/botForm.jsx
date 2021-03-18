@@ -29,7 +29,7 @@ class BotForm extends React.Component {
         return i.key == value
       })
       this.setState({
-        option: item
+        option: item.value
       })
     }
 
@@ -39,18 +39,18 @@ class BotForm extends React.Component {
           <div>初始参数设置</div>
             <div className={styles.lineWrap1}>
                   <div className={styles.formUnit}>
-                    <label>过滤风速</label>
+                    <label>风量Q</label>
                     <input className={styles.input} fluid placeholder='' />
-                    <text className={styles.unit}>m/min</text>
+                    <text className={styles.unit}>m3/h</text>
                   </div>
                   <div className={styles.formUnit}>
-                    <label>流体动力粘度</label>
-                    <select value={this.state.option} onChange={this.getSelectedValue}>
+                    <label>滤板长度L</label>
+                    <select value={this.state.option.value} onChange={this.getSelectedValue}>
                       {this.state.options.map((item, index) => {
                         return <option value={item.key} key={index}>{item.value}</option>
                       })}
                     </select>
-                    <text className={styles.unit}>Fa*s</text>
+                    <text className={styles.unit}>mm</text>
                   </div>
               </div>
               <div className={styles.lineWrap2}>

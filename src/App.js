@@ -4,7 +4,7 @@ import {
   HashRouter as Router,
 } from "react-router-dom";
 import Home from "./pages/home/index.jsx";
-import { ConfigPage } from "./pages/configPage/index.jsx";
+import ConfigPage from "./pages/configPage/index.jsx";
 import { ResultPage } from "./pages/resultPage/index.jsx";
 
 function App() {
