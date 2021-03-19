@@ -40,7 +40,6 @@ function LoginForm(props, that) {
           />
           <div className={styles.buttonWrap}>
             <button color='teal' onClick={onClickLogin}>登录</button>
-            <button color='grey'>注册</button>
           </div>
       </div>
     );

@@ -1,0 +1,27 @@
+.container {
+  min-height: 200px;
+  background-image: linear-gradient(rgb(168, 243, 243,.3), aquamarine);
+}
+
+.flexBox {
+  display: flex;
+}
+
+.title {
+  text-align: center;
+  padding: 10px;
+}
+
+.nameValue {
+  height: 20px;
+  width: 20px;
+  background-color: azure;
+}
+
+.tableWrap {
+
+}
+
+.companyWrap {
+
+}

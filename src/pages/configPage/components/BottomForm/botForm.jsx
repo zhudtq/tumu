@@ -19,8 +19,8 @@ class BotForm extends React.Component {
   }
 
     onCalc = ()=>{
-      // console.log('nicky 当前的粘度是:', this.state.option.value)
-      this.onCalcData(this.state.option.key)
+      console.log('nicky 当前的粘度是:', this.state.option)
+      this.onCalcData(this.state.option)
     }
 
     getSelectedValue = (e) => {
@@ -28,8 +28,11 @@ class BotForm extends React.Component {
       const item = this.state.options.find((i) => {
         return i.key == value
       })
+      console.log('当前切换的是', item)
       this.setState({
-        option: item.value
+        option: item.key
+      }, () => {
+        console.log('当前option是', this.state.option)
       })
     }
 
@@ -45,7 +48,7 @@ class BotForm extends React.Component {
                   </div>
                   <div className={styles.formUnit}>
                     <label>滤板长度L</label>
-                    <select value={this.state.option.value} onChange={this.getSelectedValue}>
+                    <select onChange={this.getSelectedValue}>
                       {this.state.options.map((item, index) => {
                         return <option value={item.key} key={index}>{item.value}</option>
                       })}

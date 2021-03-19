@@ -10,34 +10,46 @@ class ConfigPage extends React.Component {
   constructor(props) {
     super(props);
     this.dataTable = dataTableImport;
-    this.arr = ['滤板型号L', 'L', 'L1', 'S3/L1', 'S2/L', 'S2/L3', '过滤面积','平均风量'];
+    this.arr = ['滤板型号', 'L(mm)', 'S3/L1', 'S2/L', '过滤面积(m2)','处理风量(m3/h)'];
+    this.selectedItem = {};
     this.state = {
       showModal: 'hideModal',
-      dataStack: this.dataTable['a1200']
+      dataStack: this.dataTable['a1200'],
+      showData: 'block'
     };
-  }
-  
-  onClickJump = () => {
-    // this.props.history.push('/result')
-    // alert('还没做')
   }
 
   onCalcData = (data) => {
     console.log('nicky 页面接收到了', data, this.dataTable)
-    // this.dataStack = this.dataTable[data];
     this.setState({
-      dataStack: this.dataTable[data]
+      dataStack: this.dataTable[data],
+      selectedIndex: -1,
+      selectedItem: null
     })
     console.log('nicky datastack', this.state.dataStack);
   }
 
   onConfirm = () => {
-    this.props.history.push('/result')
-    console.log('nicky history', this.props.history)
+    if (+this.state.selectedIndex >= 0) {
+      this.props.history.push('/result')
+    }
+    else {
+      alert('你还没有选择哦')
+    }
   }
 
   onReturnBack = () => {
     this.props.history.goBack()
+  }
+
+  onSelectItem = (i) => {
+    console.log('nicky e', i)
+    this.setState({
+      selectedIndex: i,
+      selectedItem: this.state.dataStack[i]
+    }, () => {
+      console.log('选中的是, ', this.state.selectedItem, this.state.selectedIndex)
+    })
   }
 
   render() {
@@ -65,21 +77,18 @@ class ConfigPage extends React.Component {
                     })}
                 </div>
                 <div>
-                  {this.state.dataStack.map((sta, i) => {
-                    return <div key={i} className={`${styles.line} ${styles.highLight}`}>
+                  {this.state.dataStack?.length && this.state.dataStack.map((sta, i) => {
+                    return <div onClick={()=>{this.onSelectItem(i)}} key={i} className={`${styles.line} ${styles.highLight} ${this.state.selectedIndex==i?styles.selected:''}`}>
                       <div className={styles.item}>{sta.type}</div>
                       <div className={styles.item}>{sta.l}</div>
-                      <div className={styles.item}>{sta.l1}</div>
                       <div className={styles.item}>{sta.s3l1}</div>
                       <div className={styles.item}>{sta.s2l}</div>
-                      <div className={styles.item}>{sta.s2s3}</div>
                       <div className={styles.item}>{sta.s}</div>
                       <div className={styles.item}>{sta.average}</div>
                     </div>
                   })}
                 </div>
             </div>
-  
           </div>
           <div className={`${styles.buttonWrap}`}>
 

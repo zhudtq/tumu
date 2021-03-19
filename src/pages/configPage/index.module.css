@@ -61,7 +61,8 @@
 }
 
 .item {
-  width: 195px;
+  width: 225px;
+  font-size: 13px;
   border: 1px black solid;
 }
 
@@ -70,5 +71,9 @@
 }
 
 .highLight:hover {
+  background-color: rgb(170, 236, 116);
+}
+
+.selected {
   background-color: rgb(170, 236, 116);
 }
