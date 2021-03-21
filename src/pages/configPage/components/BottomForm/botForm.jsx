@@ -4,8 +4,10 @@ import React from 'react';
 class BotForm extends React.Component {
   constructor(props) {
     super(props);
-    const { onCalcData } = props;
+    const { onCalcData, reset } = props;
     this.onCalcData = onCalcData;
+    this.onReset = reset;
+    this.fengliang = ''
     this.state = {
       options: [
         {key: 'a1200', value: 1200},
@@ -14,13 +16,22 @@ class BotForm extends React.Component {
         {key: 'a1800', value: 1800},
         {key: 'a2000', value: 2000}
       ],
-      option: {key:'a1200', value:1200}
+      option: 'a1200'
     }
   }
 
     onCalc = ()=>{
-      console.log('nicky 当前的粘度是:', this.state.option)
-      this.onCalcData(this.state.option)
+      this.fengliang = document.getElementById('fengliang').value
+      if (!this.fengliang) {
+        return
+      }
+      this.onCalcData(this.state.option, this.fengliang)
+      console.log('nicky 当前的粘度是:', this.state.option, '风量', this.fengliang)
+    }
+
+    reset = () => {
+      document.getElementById('fengliang').value = '';
+      this.onReset()
     }
 
     getSelectedValue = (e) => {
@@ -43,7 +54,7 @@ class BotForm extends React.Component {
             <div className={styles.lineWrap1}>
                   <div className={styles.formUnit}>
                     <label>风量Q</label>
-                    <input className={styles.input} fluid placeholder='' />
+                    <input id='fengliang' className={styles.input} placeholder='' />
                     <text className={styles.unit}>m3/h</text>
                   </div>
                   <div className={styles.formUnit}>
@@ -58,7 +69,7 @@ class BotForm extends React.Component {
               </div>
               <div className={styles.lineWrap2}>
                 <button onClick={this.onCalc} positive>计算</button>
-                <button negative>重置</button>
+                <button onClick={this.reset} negative>重置</button>
               </div>
         </div>
       );

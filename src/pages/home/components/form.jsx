@@ -9,7 +9,15 @@ function LoginForm(props, that) {
           userName,
           password
         }
-        onTapLogin(userInfo);
+        console.log('nicky userinfo', userInfo)
+        if (userName == 'admain' && password == 'admain') {
+          onTapLogin(true);
+        }
+        else {
+          onTapLogin(false);
+          document.getElementById('account').value = '';
+          document.getElementById('password').value = '';
+        }
     }
 
     function onAccChange(e) {
@@ -25,18 +33,20 @@ function LoginForm(props, that) {
           <div className={styles.avatarImg}>
           </div>
           <div className={styles.title}>
-            新型微孔膜滤板选型设计
+            新型微孔膜滤板系列化及选型设计
           </div>
           <input 
-            placeholder='账号' 
+            placeholder='账号'
             className={styles.account}
-            onChange={onAccChange}
+            id='account'
+            onChange={(e)=>{onAccChange(e)}}
           />
           <input 
             placeholder='密码' 
             type='password'
+            id='password'
             className={styles.password}
-            onChange={onPassChange}
+            onChange={(e)=>{onPassChange(e)}}
           />
           <div className={styles.buttonWrap}>
             <button color='teal' onClick={onClickLogin}>登录</button>

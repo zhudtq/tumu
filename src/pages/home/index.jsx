@@ -16,8 +16,7 @@ class HomeClass extends React.Component {
 
   checkUserInfo = (userInfo) => {
     return new Promise((res, rej) => {
-      const { userName='', password='' } = userInfo;
-      if (userName !== 'admain' || password !=='admain') {
+      if (!userInfo) {
         rej();
       }
       res();
@@ -62,7 +61,7 @@ class HomeClass extends React.Component {
         <div className={`${this.state.showModal}`}>
           <div className='modal-content flex'>
             <div className='modal-text'>
-              密码错误
+              密码错误，点击重试
             </div>
             <button onClick={this.closeModal}>
               确定

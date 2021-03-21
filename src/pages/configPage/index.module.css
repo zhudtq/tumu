@@ -72,8 +72,13 @@
 
 .highLight:hover {
   background-color: rgb(170, 236, 116);
+  cursor: pointer;
 }
 
 .selected {
   background-color: rgb(170, 236, 116);
+}
+
+.companyWrap {
+  min-height: 200px;
 }

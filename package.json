@@ -28,8 +28,8 @@
     "homepage": ".",
     "test:dec": "electron .",
     "test:both": "react-scripts start & electron .",
-    "build:dec": "electron-packager . 测试系统 --platform=win32 --arch=x64 --out=./out --app-version=1.0.0",
-    "build:deco": "electron-packager . 测试系统 --platform=win32 --arch=x64 --out=./out --app-version=1.0.0 --overwrite"
+    "build:dec": "electron-packager . 新型微孔膜设计系统 --platform=win32 --arch=x64 --out=./out --app-version=1.0.0",
+    "build:deco": "electron-packager . 新型微孔膜设计系统 --platform=win32 --arch=x64 --out=./out --app-version=1.0.0 --overwrite"
   },
   "main": "main.js",
   "eslintConfig": {

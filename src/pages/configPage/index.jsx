@@ -10,17 +10,20 @@ class ConfigPage extends React.Component {
   constructor(props) {
     super(props);
     this.dataTable = dataTableImport;
+    this.fengliang = ''
     this.arr = ['滤板型号', 'L(mm)', 'S3/L1', 'S2/L', '过滤面积(m2)','处理风量(m3/h)'];
     this.selectedItem = {};
     this.state = {
       showModal: 'hideModal',
-      dataStack: this.dataTable['a1200'],
+      // dataStack: this.dataTable['a1200'],
+      dataStack:[],
       showData: 'block'
     };
   }
 
-  onCalcData = (data) => {
-    console.log('nicky 页面接收到了', data, this.dataTable)
+  onCalcData = (data, fengliang) => {
+    console.log('nicky 页面接收到了', data, fengliang, this.dataTable)
+    this.fengliang = fengliang
     this.setState({
       dataStack: this.dataTable[data],
       selectedIndex: -1,
@@ -31,15 +34,24 @@ class ConfigPage extends React.Component {
 
   onConfirm = () => {
     if (+this.state.selectedIndex >= 0) {
-      this.props.history.push('/result')
+      this.props.history.push({
+        pathname: '/result',
+        query: {
+          item: this.state.selectedItem,
+          fengliang: this.fengliang
+        }
+      })
     }
     else {
-      alert('你还没有选择哦')
     }
   }
 
   onReturnBack = () => {
-    this.props.history.goBack()
+    this.props.history.push('/')
+  }
+
+  reset = () => {
+    this.refs.topComp.reset()
   }
 
   onSelectItem = (i) => {
@@ -64,8 +76,8 @@ class ConfigPage extends React.Component {
           <div className={`${styles.configWrap} flex`}>
             <img src={dataPic} className={styles.configPic} />
             <div className={styles.configDetail}>
-              <TopForm />
-              <BotForm onCalcData={this.onCalcData} />
+              <TopForm ref='topComp' />
+              <BotForm reset={this.reset} onCalcData={this.onCalcData} />
             </div>
           </div>
           <div className={`${styles.dataWrap}`}>

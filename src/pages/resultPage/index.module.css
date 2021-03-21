@@ -12,16 +12,63 @@
   padding: 10px;
 }
 
-.nameValue {
+.normal {
   height: 20px;
-  width: 20px;
   background-color: azure;
 }
 
-.tableWrap {
-
+.companyWrap {
+  min-height: 200px;
+  margin-left: 10px;
 }
 
-.companyWrap {
+.longInput {
+  width: 400px;
+}
 
+.middleInput {
+  width: 200px;
+}
+
+.shortInput {
+  width: 100px;
+}
+
+.name {
+  width: 100px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.item {
+  border: 1px black solid;
+  width: 150px;
+}
+
+.id {
+  border: 1px black solid;
+  width: 50px;
+}
+
+.btn {
+  position: relative;
+  margin-left: 70px;
+  top: -20px;
+}
+
+.line {
+  width: 350px;
+}
+
+.line1:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.line1 {
+  width: 350px;
+}
+
+.highLight {
+  background-color: white;
 }
